@@ -20,6 +20,7 @@ function CommentsChart() {
   const options = {
     indexAxis: "y",
     responsive: true,
+    maintainAspectRatio: false,
     scales: {
       x: {
         beginAtZero: true,
