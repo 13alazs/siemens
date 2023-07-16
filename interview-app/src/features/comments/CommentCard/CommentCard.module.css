@@ -1,0 +1,25 @@
+.commentcard {
+  background-color: lightgray;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+}
+
+.commentcard h2 {
+  margin: 0;
+  text-align: left;
+  font-size: 18px;
+}
+
+.commentcard span {
+  margin: 0;
+  font-size: 12px;
+  text-align: left;
+  display: block;
+  color: gray;
+}
+
+.commentcard p {
+  margin: 0;
+  text-align: left;
+}
