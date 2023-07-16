@@ -1,0 +1,7 @@
+.commentsChart {
+  margin: auto;
+  width: 80%;
+}
+.commentsChart canvas {
+  width: 100%;
+}

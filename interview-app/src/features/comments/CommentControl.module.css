@@ -1,0 +1,7 @@
+.commentControl {
+  display: inline-block;
+}
+
+.commentControl button {
+  margin: 0 10px;
+}

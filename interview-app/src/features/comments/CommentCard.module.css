@@ -8,11 +8,12 @@
 .commentcard h2 {
   margin: 0;
   text-align: left;
-  text-transform: capitalize;
+  font-size: 18px;
 }
 
 .commentcard span {
   margin: 0;
+  font-size: 12px;
   text-align: left;
   display: block;
   color: gray;

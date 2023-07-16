@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import WordCountUtil from "../../utils/WordCountUtil";
 import { fetchComments } from "./commentsAPI";
 
 const initialState = {
@@ -10,7 +11,9 @@ const initialState = {
 export const getComments = createAsyncThunk("comment/getComments", async () => {
   const response = await fetchComments();
 
-  return response.data;
+  return response.data.map((comment) =>
+    Object.assign(comment, { count: WordCountUtil.countWords(comment.body) })
+  );
 });
 
 export const commentSlice = createSlice({

@@ -9,9 +9,5 @@ export function CommentsFetchButton() {
     dispatch(getComments());
   }
 
-  return (
-    <div>
-      <button onClick={() => fetch()}>Fetch comments</button>
-    </div>
-  );
+  return <button onClick={() => fetch()}>Fetch comments</button>;
 }
