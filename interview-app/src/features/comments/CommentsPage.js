@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getComments, setFilter } from "./store/commentSlice";
-import { Comments } from "./Comments";
+import Comments from "./Comments";
 import styles from "./Comments.module.css";
 import CommentsChart from "./CommentsChart/CommentsChart";
-import { CommentControl } from "./CommentControl/CommentControl";
+import CommentControl from "./CommentControl/CommentControl";
 
-export function CommentsPage() {
+function CommentsPage() {
   const dispatch = useDispatch();
   const [showComments, setShowComments] = useState(true);
   const [showGraph, setShowGraph] = useState(false);
@@ -15,7 +15,7 @@ export function CommentsPage() {
   const [postId, setPostId] = useState(currentFilter);
 
   useEffect(() => {
-    dispatch(getComments());
+    //dispatch(getComments());
   }, []);
 
   function toggleComments() {
@@ -56,3 +56,5 @@ export function CommentsPage() {
     </div>
   );
 }
+
+export default CommentsPage;

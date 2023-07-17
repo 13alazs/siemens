@@ -1,5 +1,5 @@
 import React from "react";
-import { CommentsPage } from "./features/comments/CommentsPage";
+import CommentsPage from "./features/comments/CommentsPage";
 import "./App.css";
 
 function App() {

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CommentCard.module.css";
 
-export function CommentCard(props) {
+function CommentCard(props) {
   return (
     <li className={styles.commentcard}>
       <h2>{props.name}</h2>
@@ -10,3 +10,5 @@ export function CommentCard(props) {
     </li>
   );
 }
+
+export default CommentCard;

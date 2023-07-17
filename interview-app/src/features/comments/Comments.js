@@ -1,10 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { CommentCard } from "./CommentCard/CommentCard";
+import CommentCard from "./CommentCard/CommentCard";
 import { selectComments } from "./store/commentSlice";
 import styles from "./Comments.module.css";
 
-export function Comments() {
+function Comments() {
   const filteredComments = useSelector(selectComments);
 
   return (
@@ -26,3 +26,5 @@ export function Comments() {
     </div>
   );
 }
+
+export default Comments;
