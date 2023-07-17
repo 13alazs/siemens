@@ -1,8 +1,8 @@
 import React from "react";
-import BarChart from "../chart/BarChart";
+import BarChart from "../../chart/BarChart";
 import { useSelector } from "react-redux";
 import { Chart as ChartJS } from "chart.js/auto";
-import { selectComments } from "./commentSlice";
+import { selectComments } from "../store/commentSlice";
 import styles from "./CommentsChart.module.css";
 
 function CommentsChart() {
@@ -39,7 +39,7 @@ function CommentsChart() {
 
   return (
     <div className={styles.commentsChart}>
-      {comments.length && (
+      {comments.length > 0 && (
         <BarChart chartData={commentData} options={options} />
       )}
     </div>

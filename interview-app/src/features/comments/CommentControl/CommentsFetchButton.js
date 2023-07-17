@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getComments } from "./commentSlice";
+import { getComments } from "../store/commentSlice";
 
 export function CommentsFetchButton() {
   const dispatch = useDispatch();

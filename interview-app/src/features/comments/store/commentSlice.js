@@ -1,11 +1,16 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import WordCountUtil from "../../utils/WordCountUtil";
+import {
+  createAsyncThunk,
+  createSelector,
+  createSlice,
+} from "@reduxjs/toolkit";
+import WordCountUtil from "../../../utils/WordCountUtil";
 import { fetchComments } from "./commentsAPI";
 
 const initialState = {
   loading: false,
   value: [],
   error: "",
+  filter: null,
 };
 
 export const getComments = createAsyncThunk("comment/getComments", async () => {
@@ -19,6 +24,11 @@ export const getComments = createAsyncThunk("comment/getComments", async () => {
 export const commentSlice = createSlice({
   name: "comment",
   initialState,
+  reducers: {
+    setFilter: (state, action) => {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(getComments.pending, (state) => {
       state.loading = true;
@@ -36,6 +46,19 @@ export const commentSlice = createSlice({
   },
 });
 
-export const selectComments = (state) => state.comment.value;
+export const { setFilter } = commentSlice.actions;
+
+const value = (state) => state.comment.value;
+const filter = (state) => state.comment.filter;
+
+export const selectComments = createSelector(
+  [value, filter],
+  (value, filter) => {
+    if (filter) {
+      return value.filter((comment) => comment.postId == filter);
+    }
+    return value;
+  }
+);
 
 export default commentSlice.reducer;

@@ -1,12 +1,24 @@
-.comments ul {
+.commentList ul {
   list-style-type: none;
   padding: 0;
 }
 
 .commentList {
-  overflow-y: scroll;
-  max-height: 300px;
+  overflow-y: auto;
+  max-height: 230px;
   width: 80%;
   margin: 10px auto;
   padding: 0 10px;
+}
+
+.noData {
+  width: 80%;
+  margin: 30px auto;
+  color: red;
+  padding: 0 10px;
+}
+
+.commentPage {
+  max-width: 1300px;
+  margin: 0 auto;
 }

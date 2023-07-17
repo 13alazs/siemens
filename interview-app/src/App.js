@@ -1,5 +1,4 @@
 import React from "react";
-import { CommentsFetchButton } from "./features/comments/CommentsFetchButton";
 import { CommentsPage } from "./features/comments/CommentsPage";
 import "./App.css";
 

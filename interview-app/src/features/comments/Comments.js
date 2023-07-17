@@ -1,18 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { CommentCard } from "./CommentCard";
+import { CommentCard } from "./CommentCard/CommentCard";
+import { selectComments } from "./store/commentSlice";
 import styles from "./Comments.module.css";
 
 export function Comments() {
-  const comments = useSelector((state) => state.comment);
+  const filteredComments = useSelector(selectComments);
 
   return (
     <div className={styles.commentList}>
-      {comments.loading && <div>Loading...</div>}
-      {!comments.loading && comments.error ? <div>Error</div> : null}
-      {!comments.loading && comments.value?.length ? (
+      {filteredComments && filteredComments.length > 0 ? (
         <ul>
-          {comments.value.map((comment) => (
+          {filteredComments.map((comment) => (
             <CommentCard
               key={comment.id}
               name={comment.name}
@@ -21,7 +20,9 @@ export function Comments() {
             />
           ))}
         </ul>
-      ) : null}
+      ) : (
+        <>No data available for this filter.</>
+      )}
     </div>
   );
 }
